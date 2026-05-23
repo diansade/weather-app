@@ -1,0 +1,37 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #A2D2FF;
+}
+
+#main{
+    padding: 20px;
+    height: 400px;
+    width: 400px;
+    margin: 0;
+    border: solid 1px  #BDE0FE ;
+    border-radius: 10px;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #BDE0FE;
+}
+
+#inputCity{
+    padding: 2px;
+    border: solid 1px  #A2D2FF;
+    border-radius: 5px;
+}
+
+#searchButton{
+    padding: 2px;
+    border: solid 1px  #A2D2FF;
+    border-radius: 5px;
+}
