@@ -1,43 +1,122 @@
 body{
     padding: 0;
     margin: 0;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #A2D2FF;
+    background: linear-gradient(to bottom right, #A2D2FF, #BDE0FE);
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    color: #1d3557;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
 }
 
 #main{
-    padding: 20px;
-    height: 450px;
-    width: 450px;
-    margin: 0;
-    border: solid 1px  #BDE0FE ;
-    border-radius: 10px;
+    width: 420px;
+    min-height: 500px;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
     display: flex;
-    gap: 50px;
     flex-direction: column;
     align-items: center;
-    background-color: #BDE0FE;
+    gap: 30px;
+}
+
+#searchSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 #inputCity{
-    padding: 2px;
-    width: 300px;
-    height: 20px;
-    border: solid 1px  #A2D2FF;
-    border-radius: 5px;
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.hiddenText{
-    display: none;
+#inputCity:focus{
+    box-shadow: 0 0 8px rgba(69, 123, 157, 0.4);
 }
 
 #searchButton{
-    padding: 2px;
-    border: solid 1px  #A2D2FF;
-    border-radius: 5px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background-color: #457B9D;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+
+#searchButton:hover{
+    background-color: #35607d;
+    transform: scale(1.03);
+}
+
+#displaySection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#message{
+    color: #555;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+#city{
+    margin: 5px 0;
+    font-size: 1.5rem;
+    color: #1d3557;
+}
+
+#icon{
+    display: none;
+    width: 100px;
+    height: 100px;
+}
+
+#temp{
+    margin: 5px 0;
+    font-size: 2.2rem;
+    color: #0f4c75;
+}
+
+#condition{
+    margin: 5px 0 15px;
+    text-transform: capitalize;
+    color: #444;
+}
+
+#humidity,
+#wind{
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+#message{
+    color: #d62828;
+    font-size: 1rem;
+    margin-top: 20px;
+    font-weight: 500;
 }

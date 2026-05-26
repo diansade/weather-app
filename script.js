@@ -13,6 +13,7 @@ let wind = document.getElementById("wind");
 
 const clearWeather = () => {
     icon.src="";
+    icon.style.display = "none";
     cityName.innerHTML = "";
     temp.innerHTML = "";
     condition.innerHTML = "";
@@ -31,17 +32,18 @@ const search = async () => {
             console.log(data);
 
             if(data.cod != 200){
-                message.innerHTML = data.message;
+                message.innerHTML = "City not found. Please try again.";
                 clearWeather();
                 message.style.display = "block";
                 inputCity.focus();
                 return;
             }
 
+            message.innerHTML = "";
             message.style.display = "none";
             cityName.innerHTML = `City: ${data.name}`;
 
-        
+            icon.style.display = "block";
             icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
 
         
