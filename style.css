@@ -12,8 +12,8 @@ body{
 
 #main{
     padding: 20px;
-    height: 400px;
-    width: 400px;
+    height: 450px;
+    width: 450px;
     margin: 0;
     border: solid 1px  #BDE0FE ;
     border-radius: 10px;
@@ -26,8 +26,14 @@ body{
 
 #inputCity{
     padding: 2px;
+    width: 300px;
+    height: 20px;
     border: solid 1px  #A2D2FF;
     border-radius: 5px;
+}
+
+.hiddenText{
+    display: none;
 }
 
 #searchButton{
