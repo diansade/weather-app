@@ -1,5 +1,3 @@
-let KEY = "c5dc6dd8d87d606e1a56f09e674043cc";
-
 let searchButton = document.getElementById("searchButton");
 let inputCity = document.getElementById("inputCity");
 let message = document.getElementById("message");
