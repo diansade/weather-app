@@ -21,9 +21,16 @@ const clearWeather = () => {
     wind.innerHTML = "";
 }
 
+const loading = () => {
+    clearWeather();
+    message.innerHTML = "⛅ Loading weather...";
+    message.style.display = "block";
+}
+
 const search = async () => {
     if(inputCity.value.trim() != ""){
         try{
+            loading();
             let city = inputCity.value.trim();
             let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}&units=metric`;
             let response = await fetch(url);
@@ -32,15 +39,15 @@ const search = async () => {
             console.log(data);
 
             if(data.cod != 200){
-                message.innerHTML = "City not found. Please try again.";
                 clearWeather();
+                message.innerHTML = "City not found. Please try again.";
                 message.style.display = "block";
                 inputCity.focus();
                 return;
             }
 
-            message.innerHTML = "";
             message.style.display = "none";
+            message.innerHTML = "";
             cityName.innerHTML = `City: ${data.name}`;
 
             icon.style.display = "block";
@@ -56,13 +63,14 @@ const search = async () => {
             humidity.innerHTML = `Humidity: ${data.main.humidity}%`;
 
             
-            wind.innerHTML = `Wind: Speed = ${data.wind.speed} m/s, Deg = ${data.wind.deg}`
+            wind.innerHTML = `Wind Speed: ${data.wind.speed} m/s`;
 
             inputCity.value = "";
+            inputCity.focus();
         }
         catch(error){
-            message.innerHTML = "Something went wrong!!";
             clearWeather();
+            message.innerHTML = "Unable to fetch weather data. Please try again.";
             message.style.display = "block";
             inputCity.value = "";
             inputCity.focus();
